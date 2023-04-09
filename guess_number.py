@@ -7,31 +7,29 @@
 from random import randint
 print('Дорогой друг, приглашаю тебя проверить свою интуицию и угадать число!')
 n =''
-print('Если хочешь, продолжить игру, набери да, если нет , то слово нет')
-n = input().lower()
 while True:
+    print('Если хочешь, продолжить игру, набери "да", если нет , то слово "нет"')
+    n = input().lower()
     if n in 'да':
         print('Мы рады, что  ты с нами. Введи свой вариант целого числа от 1 до 100:')
         num1 = randint(0, 100)
-        num2 = int(input())
-        while True:
+        flag = False
+        while flag == False:
+            num2 = int(input())
             if 0 <= num2 <= 100:
                 if num2 == num1:
                     print('Ты угадал, поздравляем!')
-                    print('Хочешь сыграть еще?')
-                    n = input().lower()
+                    flag = True
                 elif num2 > num1:
                     print('Слишком много, попробуй еще раз')
                 elif num2 < num1:  
-                    print('Слишком мало, попробуй еще раз')
-                    num2 = int(input())
+                    print('Слишком мало, попробуй еще раз')       
             elif num2 < -1 or num2 > 100:
                 print('Ай, ты ввел неверное число.Введи свой вариант целого числа от 1 до 100:')
-            num2 = int(input())
     elif n in 'нет':
         print('Очень жаль, ты можешь сыграть с нами позже.')
         break
     else:
-        print('Мы не поняли твой ответ, повтори свой ввод.')
-        n = input().lower()
+        print('Мы не поняли твой ответ.')
+      
         
