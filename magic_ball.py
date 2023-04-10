@@ -18,7 +18,7 @@ while True:
     n = random.choice(answers)
     print(n)
     print('Остались еще вопросы? Введите "да"", если хотите продолжить или "нет":')
-    cnt = input()
+    cnt = input().lower()
     if cnt in 'нет':
         print('Всего хорошего, рад был Вам помочь!')
         break
